@@ -1,0 +1,683 @@
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+==============================================================
+if system_dependent('IsDebugMode')==1, dbstep; end
+
+Classifier Used: grmfif system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+
+CV Setting Used: CV_d - New Drug
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+
+if system_dependent('IsDebugMode')==1, dbstep; end
+--------------------------------------------------------------
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+
+Data Set: nr
+if system_dependent('IsDebugMode')==1, dbstep; end
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('importdata', 'C:\Program Files\MATLAB\R2016b\toolbox\matlab\iofun\importdata.p', 136)" style="font-weight:bold">importdata</a> (<a href="matlab: opentoline('C:\Program Files\MATLAB\R2016b\toolbox\matlab\iofun\importdata.p',136,0)">line 136</a>)
+Unable to open file.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('getdata', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\getdata.m', 29)" style="font-weight:bold">getdata</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\getdata.m',29,0)">line 29</a>)
+    newData1 = importdata ([ path dataset '_admat_dgc.txt']);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('RUN_Cross_Validation', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\RUN_Cross_Validation.m', 94)" style="font-weight:bold">RUN_Cross_Validation</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\RUN_Cross_Validation.m',94,0)">line 94</a>)
+    [Y,Sd,St,Did,Tid]=getdata(path,datasets{ds});
+} 
+RUN_Cross_Validation
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+m = 5
+if system_dependent('IsDebugMode')==1, dbstep; end
+n = 10
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+seeds = [  if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+1849  if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+1282  if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+9357  if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+4864  if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+5909  if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+  ]
+
+if system_dependent('IsDebugMode')==1, dbstep; end
+==========================
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+n-fold experiment start:  	1 : 34 : 24.347    11-Sep-2018
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+****if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+RUN_Cross_Validation
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+if system_dependent('IsDebugMode')==1, dbcont; end
+m = 1
+n = 1
+seeds = [  1160    ]
+
+==========================
+n-fold experiment start:  	2 : 41 : 32.519    11-Sep-2018
+if system_dependent('IsDebugMode')==1, dbcont; end
+****if system_dependent('IsDebugMode')==1, dbquit; end
+RUN_Cross_Validation
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+m = 2
+n = 2
+seeds = [  9094  7257    ]
+
+==========================
+n-fold experiment start:  	2 : 42 : 55.164    11-Sep-2018
+if system_dependent('IsDebugMode')==1, dbquit; end
+RUN_Cross_Validation
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+m = 2
+n = 3
+seeds = [  7851  1579    ]
+
+==========================
+n-fold experiment start:  	2 : 43 : 41.15    11-Sep-2018
+if system_dependent('IsDebugMode')==1, dbquit; end
+RUN_Cross_Validation
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+m = 1
+n = 1
+seeds = [  9198    ]
+
+==========================
+n-fold experiment start:  	2 : 44 : 56.374    11-Sep-2018
+if system_dependent('IsDebugMode')==1, dbcont; end
+****if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+nfold
+{Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('nfold', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\nfold.m', 22)" style="font-weight:bold">nfold</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\nfold.m',22,0)">line 22</a>)
+    [num_drugs,num_targets] = size(Y);
+} 
+nfold
+{Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('nfold', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\nfold.m', 22)" style="font-weight:bold">nfold</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\nfold.m',22,0)">line 22</a>)
+    [num_drugs,num_targets] = size(Y);
+} 
+RUN_Cross_Validation
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+m = 1
+n = 1
+seeds = [  5638    ]
+
+==========================
+n-fold experiment start:  	2 : 47 : 29.742    11-Sep-2018
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+****if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+alg_grmf
+if system_dependent('IsDebugMode')==1, dbquit; end
+RUN_Cross_Validation
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+m = 1
+n = 10
+seeds = [  3069    ]
+
+==========================
+n-fold experiment start:  	2 : 52 : 13.708    11-Sep-2018
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+****if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+k50		1	0.0001	0.1		if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+0.615				TIME:    2 : 59 : 10.585    11-Sep-2018
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+****if system_dependent('IsDebugMode')==1, dbstep; end
+k50		1	0.0001	0		if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+0.618				TIME:    3 : 0 : 1.966    11-Sep-2018
+****k50		0.25	0.0001	0		if system_dependent('IsDebugMode')==1, dbcont; end
+0.448				TIME:    3 : 0 : 13.703    11-Sep-2018
+****k50		1	0.001	0.1		if system_dependent('IsDebugMode')==1, dbcont; end
+0.796				TIME:    3 : 0 : 32.024    11-Sep-2018
+****k50		1	0.1	0.1		if system_dependent('IsDebugMode')==1, dbcont; end
+0.548				TIME:    3 : 0 : 35.192    11-Sep-2018
+****k50		1	0.0001	0.1		0.757				TIME:    3 : 0 : 36.149    11-Sep-2018
+****k50		1	0.01	0		0.285				TIME:    3 : 0 : 37.069    11-Sep-2018
+****k50		1	0.01	0.1		0.857				TIME:    3 : 0 : 37.954    11-Sep-2018
+****k50		1	0.1	0.1		0.451				TIME:    3 : 0 : 38.902    11-Sep-2018
+****k50		0.5	0.1	0.1		0.304				TIME:    3 : 0 : 39.778    11-Sep-2018
+n-fold experiment end:  	3 : 0 : 39.786    11-Sep-2018
+
+if system_dependent('IsDebugMode')==1, dbstep; end
+      AUC: 0.83833
+if system_dependent('IsDebugMode')==1, dbstep; end
+     AUPR: 0.568016
+if system_dependent('IsDebugMode')==1, dbstep; end
+==========================
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+
+ FINAL AVERAGED RESULTS
+
+if system_dependent('IsDebugMode')==1, dbstep; end
+     AUC (std): 0.83833	(0)
+if system_dependent('IsDebugMode')==1, dbstep; end
+    AUPR (std): 0.568016	(0)
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+--------------------------------------------------------------
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+==============================================================
+if system_dependent('IsDebugMode')==1, dbstep; end
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+m = 1
+n = 10
+seeds = [  7416    ]
+
+==========================
+n-fold experiment start:  	3 : 2 : 22.804    11-Sep-2018
+****k50		1	0.1	0		0.853				TIME:    3 : 2 : 23.802    11-Sep-2018
+****k50		1	0.01	0.1		0.342				TIME:    3 : 2 : 24.662    11-Sep-2018
+****k50		1	0.1	0.01		0.252				TIME:    3 : 2 : 25.571    11-Sep-2018
+****k50		0.5	0.1	0.1		0.229				TIME:    3 : 2 : 26.484    11-Sep-2018
+****k50		1	0.1	0.1		0.399				TIME:    3 : 2 : 27.33    11-Sep-2018
+****k50		1	0.01	0.1		0.752				TIME:    3 : 2 : 28.201    11-Sep-2018
+****k50		0.5	0.1	0.1		0.551				TIME:    3 : 2 : 29.112    11-Sep-2018
+****k50		2	0.001	0.01		0.434				TIME:    3 : 2 : 30.079    11-Sep-2018
+****k50		1	0.0001	0.1		0.933				TIME:    3 : 2 : 31.037    11-Sep-2018
+****k50		1	0.0001	0.01		0.696				TIME:    3 : 2 : 31.854    11-Sep-2018
+n-fold experiment end:  	3 : 2 : 31.862    11-Sep-2018
+
+<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\nfold.m',88,1)">88  </a>    fprintf('      AUC: %g\n',   auc_res);
+if system_dependent('IsDebugMode')==1, dbquit; end
+RUN_Cross_Validation
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+m = 1
+n = 10
+seeds = [  5404    ]
+
+==========================
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('nfold')" style="font-weight:bold">nfold</a>
+Too many output arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('crossValidation', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\crossValidation.m', 46)" style="font-weight:bold">crossValidation</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\crossValidation.m',46,0)">line 46</a>)
+        [AUCs(i), AUPRs(i)] = nfold(Y,Sd,St,pred_fn,n,seed,cv_setting,use_WKNKN,K,eta,use_W_matrix);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('RUN_Cross_Validation', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\RUN_Cross_Validation.m', 97)" style="font-weight:bold">RUN_Cross_Validation</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\RUN_Cross_Validation.m',97,0)">line 97</a>)
+    crossValidation(Y',Sd,St,classifier,cv_setting,m,n,use_WKNKN,K,eta,use_W_matrix);
+} 
+opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\RUN_Cross_Validation.m',97,0)
+RUN_Cross_Validation
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+m = 1
+n = 10
+seeds = [  131    ]
+
+==========================
+if system_dependent('IsDebugMode')==1, dbstep in; end
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('nfold')" style="font-weight:bold">nfold</a>
+Too many output arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('crossValidation', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\crossValidation.m', 46)" style="font-weight:bold">crossValidation</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\crossValidation.m',46,0)">line 46</a>)
+        [AUCs(i), AUPRs(i)] = nfold(Y,Sd,St,pred_fn,n,seed,cv_setting,use_WKNKN,K,eta,use_W_matrix);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('RUN_Cross_Validation', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\RUN_Cross_Validation.m', 97)" style="font-weight:bold">RUN_Cross_Validation</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\RUN_Cross_Validation.m',97,0)">line 97</a>)
+    crossValidation(Y',Sd,St,classifier,cv_setting,m,n,use_WKNKN,K,eta,use_W_matrix);
+} 
+RUN_Cross_Validation
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+if system_dependent('IsDebugMode')==1, dbcont; end
+m = 1
+n = 10
+seeds = [  4052    ]
+
+==========================
+if system_dependent('IsDebugMode')==1, dbstep in; end
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('nfold')" style="font-weight:bold">nfold</a>
+Too many output arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('crossValidation', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\crossValidation.m', 46)" style="font-weight:bold">crossValidation</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\crossValidation.m',46,0)">line 46</a>)
+        [AUCs(i), AUPRs(i)] = nfold(Y,Sd,St,pred_fn,n,seed,cv_setting,use_WKNKN,K,eta,use_W_matrix);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('RUN_Cross_Validation', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\RUN_Cross_Validation.m', 97)" style="font-weight:bold">RUN_Cross_Validation</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\RUN_Cross_Validation.m',97,0)">line 97</a>)
+    crossValidation(Y',Sd,St,classifier,cv_setting,m,n,use_WKNKN,K,eta,use_W_matrix);
+} 
+crossValidation
+{Not enough input arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('crossValidation', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\crossValidation.m', 14)" style="font-weight:bold">crossValidation</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\crossValidation.m',14,0)">line 14</a>)
+    pred_fn = str2func(['alg_' classifier]);
+} 
+RUN_Cross_Validation
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+m = 1
+n = 10
+seeds = [  5767    ]
+
+==========================
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+{Error using <a href="matlab:matlab.internal.language.introspective.errorDocCallback('nfold')" style="font-weight:bold">nfold</a>
+Too many output arguments.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('crossValidation', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\crossValidation.m', 46)" style="font-weight:bold">crossValidation</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\crossValidation.m',46,0)">line 46</a>)
+        [AUCs(i), AUPRs(i)] = nfold(Y,Sd,St,pred_fn,n,seed,cv_setting,use_WKNKN,K,eta,use_W_matrix);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('RUN_Cross_Validation', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\RUN_Cross_Validation.m', 97)" style="font-weight:bold">RUN_Cross_Validation</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\RUN_Cross_Validation.m',97,0)">line 97</a>)
+    crossValidation(Y',Sd,St,classifier,cv_setting,m,n,use_WKNKN,K,eta,use_W_matrix);
+} 
+matlab.internal.language.introspective.errorDocCallback('nfold')
+RUN_Cross_Validation
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+m = 1
+n = 10
+seeds = [  3166    ]
+
+==========================
+if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+RUN_Cross_Validation
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+m = 1
+n = 10
+seeds = [  8972    ]
+
+==========================
+if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+{Undefined function or variable 'len'.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('nfold', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\nfold.m', 51)" style="font-weight:bold">nfold</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\nfold.m',51,0)">line 51</a>)
+            left_out_drugs = rand_ind((floor((i-1)*len/nr_fold)+1:floor(i*len/nr_fold))');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('crossValidation', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\crossValidation.m', 47)" style="font-weight:bold">crossValidation</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\crossValidation.m',47,0)">line 47</a>)
+y= nfold(Y,Sd,St,pred_fn,n,seed,cv_setting,use_WKNKN,K,eta,use_W_matrix);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('RUN_Cross_Validation', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\RUN_Cross_Validation.m', 97)" style="font-weight:bold">RUN_Cross_Validation</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\RUN_Cross_Validation.m',97,0)">line 97</a>)
+    crossValidation(Y',Sd,St,classifier,cv_setting,m,n,use_WKNKN,K,eta,use_W_matrix);
+} 
+RUN_Cross_Validation
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+m = 1
+n = 10
+seeds = [  1243    ]
+
+==========================
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+{Index exceeds matrix dimensions.
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('nfold', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\nfold.m', 51)" style="font-weight:bold">nfold</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\nfold.m',51,0)">line 51</a>)
+            left_out_drugs = rand_ind((floor((i-1)*len/nr_fold)+1:floor(i*len/nr_fold))');
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('crossValidation', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\crossValidation.m', 47)" style="font-weight:bold">crossValidation</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\crossValidation.m',47,0)">line 47</a>)
+y= nfold(Y,Sd,St,pred_fn,n,seed,cv_setting,use_WKNKN,K,eta,use_W_matrix);
+
+Error in <a href="matlab:matlab.internal.language.introspective.errorDocCallback('RUN_Cross_Validation', 'E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\RUN_Cross_Validation.m', 97)" style="font-weight:bold">RUN_Cross_Validation</a> (<a href="matlab: opentoline('E:\ComputerSience\Term4\FinalProject\readed\CombineSecondRevise\PyDTI\GRMF\RUN_Cross_Validation.m',97,0)">line 97</a>)
+    crossValidation(Y',Sd,St,classifier,cv_setting,m,n,use_WKNKN,K,eta,use_W_matrix);
+} 
+RUN_Cross_Validation
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+m = 1
+n = 10
+seeds = [  8351    ]
+
+==========================
+(i-1)*len/nr_fold
+
+ans =
+
+    54
+
+if system_dependent('IsDebugMode')==1, dbquit; end
+RUN_Cross_Validation
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+m = 1
+n = 10
+seeds = [  1902    ]
+
+==========================
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbstep; end
+****if system_dependent('IsDebugMode')==1, dbstep in; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+k50		1	0.1	0.1		
+ FINAL AVERAGED RESULTS
+
+     AUC (std): 0	(0)
+    AUPR (std): 0	(0)
+--------------------------------------------------------------
+==============================================================
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+m = 1
+n = 10
+seeds = [  1855    ]
+
+==========================
+if system_dependent('IsDebugMode')==1, dbstep; end
+if system_dependent('IsDebugMode')==1, dbquit; end
+RUN_Cross_Validation
+==============================================================
+
+Classifier Used: grmf
+CV Setting Used: CV_d - New Drug
+
+--------------------------------------------------------------
+
+Data Set: nr
+m = 1
+n = 10
+seeds = [  7901    ]
+
+==========================
+if system_dependent('IsDebugMode')==1, dbcont; end
+if system_dependent('IsDebugMode')==1, dbcont; end
+****k50		0.5	0.1	0.1		if system_dependent('IsDebugMode')==1, dbquit; end
+Exception "java.lang.ClassNotFoundException: com/intellij/codeInsight/editorActions/FoldingData"while constructing DataFlavor for: application/x-java-jvm-local-objectref; class=com.intellij.codeInsight.editorActions.FoldingData
+Exception "java.lang.ClassNotFoundException: com/intellij/codeInsight/editorActions/FoldingData"while constructing DataFlavor for: application/x-java-jvm-local-objectref; class=com.intellij.codeInsight.editorActions.FoldingData
