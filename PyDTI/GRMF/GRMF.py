@@ -60,6 +60,7 @@ class GRMF:
         #     average_prec))
         fpr, tpr, thr = roc_curve(test_label, np.array(score))
         auc_val = auc(fpr, tpr)
+        MCC = float(tp*tn-fp*fn)/(np.sqrt((tp+fp)*(tp+fn)*(tn+fp)*(tn+fn)))
         print("AUPR: " + str(aupr_val) + ", AUC: " + str(auc_val))
 
         return aupr_val, auc_val

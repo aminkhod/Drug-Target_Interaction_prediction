@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59945904-1cfa-4e74-90c8-7d52878ffc57" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GRMF/GRMF.py" beforeDir="false" afterPath="$PROJECT_DIR$/GRMF/GRMF.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GRMF/GRMF.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="61" column="31" lean-forward="true" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
+            <state relative-caret-position="448">
+              <caret line="60" column="62" lean-forward="true" selection-start-line="60" selection-start-column="62" selection-end-line="60" selection-end-column="62" />
             </state>
           </provider>
         </entry>
@@ -109,7 +109,6 @@
         <option value="$PROJECT_DIR$/daspfind.py" />
         <option value="$PROJECT_DIR$/brdti.py" />
         <option value="$PROJECT_DIR$/kbmf2k/kbmf.py" />
-        <option value="$PROJECT_DIR$/GRMF/GRMF.py" />
         <option value="$PROJECT_DIR$/Classify.py" />
         <option value="$PROJECT_DIR$/../../Machine learning/Done/DDR-2018/RSO24-ddr-114c2192976c/Similarity_selection_code/DDR_demo/Classify.py" />
         <option value="$PROJECT_DIR$/ddr.py" />
@@ -121,10 +120,11 @@
         <option value="$PROJECT_DIR$/functions.py" />
         <option value="$PROJECT_DIR$/PyDTI.py" />
         <option value="$PROJECT_DIR$/EnsambleDTI.py" />
+        <option value="$PROJECT_DIR$/GRMF/GRMF.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="25" />
     <option name="width" value="1370" />
     <option name="height" value="745" />
@@ -331,8 +331,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1038" height="803" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1038" height="803" extended-state="6" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49760765" visible="true" weight="0.15868263" />
       <window_info id="Structure" order="1" sideWeight="0.50239235" side_tool="true" weight="0.203125" />
@@ -1094,8 +1093,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/GRMF/GRMF.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="61" column="31" lean-forward="true" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
+        <state relative-caret-position="448">
+          <caret line="60" column="62" lean-forward="true" selection-start-line="60" selection-start-column="62" selection-end-line="60" selection-end-column="62" />
         </state>
       </provider>
     </entry>
