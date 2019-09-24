@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59945904-1cfa-4e74-90c8-7d52878ffc57" name="Default Changelist" comment="" />
+    <list default="true" id="59945904-1cfa-4e74-90c8-7d52878ffc57" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +19,7 @@
         <entry file="file://$PROJECT_DIR$/PyDTI.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-402">
-              <caret line="53" column="19" lean-forward="true" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+              <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -40,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GRMF/GRMF.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="64" column="32" lean-forward="true" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
+            <state relative-caret-position="414">
+              <caret line="61" column="31" lean-forward="true" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -155,7 +157,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../DDI-Project" />
     <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -329,7 +331,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1038" height="803" extended-state="6" />
+    <frame x="-7" y="-7" width="1038" height="803" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49760765" visible="true" weight="0.15868263" />
       <window_info id="Structure" order="1" sideWeight="0.50239235" side_tool="true" weight="0.203125" />
@@ -824,7 +827,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/ProgramData/Anaconda3/Lib/site-packages/tensorflow/contrib/learn/python/learn/estimators/estimator.py" />
     <entry file="file://$PROJECT_DIR$/../../Machine learning/Done/(NRLMF)Neighborhood Regularized Logistic Matrix Factorization for Drug-Target Interaction Prediction/PyDTI-master/functions.py" />
     <entry file="file://$PROJECT_DIR$/../functions.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1066,7 +1068,7 @@
     <entry file="file://$PROJECT_DIR$/PyDTI.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-402">
-          <caret line="53" column="19" lean-forward="true" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
+          <caret line="53" column="19" selection-start-line="53" selection-start-column="19" selection-end-line="53" selection-end-column="19" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -1083,10 +1085,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../DDI-Project/NDD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/GRMF/GRMF.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="64" column="32" lean-forward="true" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
+        <state relative-caret-position="414">
+          <caret line="61" column="31" lean-forward="true" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
         </state>
       </provider>
     </entry>
