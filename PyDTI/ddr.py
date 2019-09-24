@@ -63,7 +63,11 @@ class DDR:
 
         return sim
 
-    def fix_model(self, W, intMat, drugMat, targetMat, seed):
+    def fix_model(self, W, intMat, drugMat, targetMat,num, cvs, dataset, seed=None):
+        self.dataset = dataset
+        self.num = num
+        self.cvs = cvs
+        self.seed = seed
         # if (self.cv >= 3):
         #     intMat = np.transpose(intMat)
         #     W = np.transpose(W)
@@ -197,41 +201,45 @@ class DDR:
         # no_trees = [5,10,15]#range(5,62,2)
         no_trees = [100, 200, 300, 400]
         criterion = ["gini", "entropy"]
-        result = []
-        scoreTesting=[]
         auprres=[]
         aucres=[]
-        # for cw in learning_rate:
-        cw =0.01
-        # for c in criterion:
-        c="gini"
-        # for t in no_trees:
-        t=100
-        scoreTesting = run_classification_configuration(self.folds_features, self.labels, test_idx,t,cw,c,performance=False)
-        score = np.transpose(scoreTesting)
-        prec, rec, thr = precision_recall_curve(test_label, score)
-        # prec=np.array(prec[0:len(prec)])
-        # rec=np.array(rec[0:len(rec)])
-        aupr_val = auc(rec, prec)
-        fpr, tpr, thr = roc_curve(test_label, score)
-        auc_val = auc(np.array(fpr), np.array(tpr))
-        # print 'no_trees',t, 'max_depth',c, 'learning_rate',cw
-        # print 'total_AUPR_training:', round(AUPR_train,2)
-        # print 'total_AUPR_testing:', round(AUPR_test, 2)
-        # result.append(parameter_result)
-        auprres.append(aupr_val)
-        aucres.append(auc_val)
-        # result.sort(key=lambda x: x[0], reverse=True)
-        # self.predictR = result
-        # results = run_classification(self.folds_features, self.labels, test_data)
-        # aupr_val=results[2]
+        scoretrain = []
+        for cw in learning_rate:
+        # cw =0.01
+            for c in criterion:
+        # c="gini"
+                for t in no_trees:
+        # t=100
+                    scoreTesting , scoreTraining = run_classification_configuration(self.folds_features, self.labels, test_idx,t,cw,c,performance=False)
+                    score = np.transpose(scoreTesting)
+                    prec, rec, thr = precision_recall_curve(test_label, score)
+                    # prec=np.array(prec[0:len(prec)])
+                    # rec=np.array(rec[0:len(rec)])
+                    aupr_val = auc(rec, prec)
+                    fpr, tpr, thr = roc_curve(test_label, score)
+                    auc_val = auc(np.array(fpr), np.array(tpr))
+                    # print 'no_trees',t, 'max_depth',c, 'learning_rate',cw
+                    # print 'total_AUPR_training:', round(AUPR_train,2)
+                    # print 'total_AUPR_testing:', round(AUPR_test, 2)
+                    # result.append(parameter_result)
+                    auprres.append(aupr_val)
+                    aucres.append(auc_val)
+                    auprres.sort()
+                    aucres.sort()
+                    if aupr_val>= auprres[0]:
+                        import pandas as pd
+                        scoretrain = pd.DataFrame(scoreTraining)
+        auc_val = aucres[0]
+        aupr_val = auprres[0]
 
+        scoretrain.to_csv('../data/datasets/EnsambleDTI/ddr_' + str(self.dataset) + '_s' +
+                     str(self.cvs) + '_' + str(self.seed) + '_' + str(self.num) + '.csv', index=False)
         # score = self.predictR[test_data[:, 0], test_data[:, 1]]
         # prec, rec, thr = precision_recall_curve(test_label,np.array(score))
         # aupr_val = auc(rec, prec)
         # fpr, tpr, thr = roc_curve( test_label,np.array(score))
         # auc_val = auc(fpr, tpr)
-        print("AUPR: " + str(np.mean(auprres)) + ", AUC: " + str(np.mean(aucres)))
+        print("AUPR: " + str(aupr_val) + ", AUC: " + str(auc_val))
         return aupr_val, auc_val
 
     def __str__(self):

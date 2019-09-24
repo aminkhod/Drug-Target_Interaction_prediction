@@ -55,7 +55,11 @@ class WNNGIP:
         K[:, new_inx] = S[:, new_inx]
         return K
 
-    def fix_model(self, W, intMat, drugMat, targetMat, seed=None, epsilon=0.1):
+    def fix_model(self, W, intMat, drugMat, targetMat,num, cvs, dataset, seed=None, epsilon=0.1):
+        self.dataset = dataset
+        self.num = num
+        self.cvs = cvs
+        self.seed = seed
         R = W*intMat
         m, n = intMat.shape
         x, y = np.where(R > 0)
@@ -79,8 +83,13 @@ class WNNGIP:
         return self.predictR[inx[:, 0], inx[:, 1]]
 
     def evaluation(self, test_data, test_label):
+        scores = self.predictR
+        import pandas as pd
+        scores = pd.DataFrame(scores)
+        scores.to_csv('../data/datasets/EnsambleDTI/wnngip_'+str(self.dataset)+'_s'+
+                      str(self.cvs)+'_'+str(self.seed)+'_'+str(self.num)+'.csv', index=False)
         scores = self.predictR[test_data[:, 0], test_data[:, 1]]
-        prec, rec, thr = precision_recall_curve(test_label, scores)
+        prec, rec, thr = precision_recall_curve(test_label, np.array(scores))
         aupr_val = auc(rec, prec)
         fpr, tpr, thr = roc_curve(test_label, scores)
         auc_val = auc(fpr, tpr)

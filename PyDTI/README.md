@@ -1,31 +1,29 @@
 # PyDTI -- a Python library for drug-target interaction prediction
 
+version 1.0, June 08 2015
 
 --------
 This package is written by:
 
-Mohammad Amin Khodamoradi
+Yong Liu
 
-Email: khodamoradi1992@gmail.com
+Email: liuy0054@e.ntu.edu.sg
 
-Department of Computer Science, Shahid Beheshti university, Tehran, Iran
-Joint Schoole of Bioinformatic, IPM, Tehran, Iran
+School of Computer Engineering, Nanyang Technological University, Singapore
+Joint NTU-UBC Research Centre of Excellence in Active Living for Elderly (LILY), Nanyang Technological University, Singapore
 
 For any questions regarding to this library, please feel free to contact the author.
 
 --------
-PyDTI is implemented by Python 3.6.7, which can be downloaded from: https://www.python.org/downloads/release/python-367/. PyDTI requires several other Python packages, including Numpy, scikit-learn, Scipy, tensorflow == 1.7, edward, matplotlib, zmq, pyzmq  and pymatbridge (a bridge between Python and Matlab).
+PyDTI is implemented by Python 2.7.9, which can be downloaded from: https://www.python.org/downloads/release/python-279/. PyDTI requires several other Python packages, including Numpy, scikit-learn, Scipy, and pymatbridge (a bridge between Python and Matlab).
 
 The original packages can be found here:
 http://www.numpy.org/
 http://scikit-learn.org/stable/
 http://www.scipy.org/
 http://arokem.github.io/python-matlab-bridge/
-.
-.
-.
 
-Note that zmq, pyzmq and pymatbridge are only required by matlab implementations. The 64-bit Windows binaries of Numpy, scikit-learn, and Scipy can also be found at: http://www.lfd.uci.edu/~gohlke/pythonlibs/.
+Note that pymatbridge is only required by KBMF2K. The 64-bit Windows binaries of Numpy, scikit-learn, and Scipy can also be found at: http://www.lfd.uci.edu/~gohlke/pythonlibs/.
 
 1. Add the folder "$PYTHON_ROOT$/Scipts/" to the system path. Please replace "$PYTHON_ROOT$" with the root folder of Python in your system.
 
@@ -33,6 +31,20 @@ Note that zmq, pyzmq and pymatbridge are only required by matlab implementations
 
 pip install numpy scipy scikit-learn
 
+--------
+For the KBMF2K method, please download the matlab code implemented by M. Gonen from http://users.ics.aalto.fi/gonen/bioinfo12.php and put the matlab code in the sub-folder "kbmf2k/". To connect the Matlab code and Python, we need to define a Matlab function:
+
+	function predictR = kbmf(args)
+		Kx = args.Kx;
+		Kz = args.Kz;
+		Y = args.Y;
+		R = args.R;
+		state = kbmf_regression_train(Kx, Kz, Y, R);
+		prediction = kbmf_regression_test(Kx, Kz, state);
+		predictR = prediction.Y.mu;
+	end
+
+Save this function into a Matlab file named kbmf.m and put this file into the subfolder "kbmf2k/".
 
 --------
 To get the results of different methods, please run PyDTI.py by setting suitable values for the following parameters:

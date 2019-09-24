@@ -13,7 +13,7 @@ import numpy as np
 from sklearn.metrics.pairwise import rbf_kernel
 from sklearn.metrics import precision_recall_curve, roc_curve
 from sklearn.metrics import auc
-
+import pandas as pd
 
 class BLMNII:
 
@@ -41,7 +41,11 @@ class BLMNII:
         vec = np.linalg.inv(K+self.sigma*np.eye(K.shape[0]))
         return np.dot(np.dot(K, vec), Y)
 
-    def fix_model(self, W, intMat, drugMat, targetMat, seed=None):
+    def fix_model(self, W, intMat, drugMat, targetMat,num, cvs, dataset, seed=None):
+        self.dataset = dataset
+        self.num = num
+        self.cvs = cvs
+        self.seed = seed
         R = W*intMat
         m, n = intMat.shape
         x, y = np.where(R > 0)
@@ -70,6 +74,13 @@ class BLMNII:
 
     def evaluation(self, test_data, test_label):
         x, y = test_data[:, 0], test_data[:, 1]
+        if self.avg:
+            score = 0.5*(self.Y1+self.Y2.T)
+        else:
+            score = np.maximum(self.Y1, self.Y2.T)
+        score = pd.DataFrame(score)
+        score.to_csv('../data/datasets/EnsambleDTI/blmniis_'+str(self.dataset)+'_s'+
+                      str(self.cvs)+'_'+str(self.seed)+'_'+str(self.num)+'.csv', index=False)
         if self.avg:
             scores = 0.5*(self.Y1[x, y]+self.Y2.T[x, y])
         else:

@@ -18,7 +18,11 @@ class PUDT:
     def __init__(self, dataset):
         self.dataset=dataset
 
-    def fix_model(self, W, intMat, drugMat, targetMat, seed=None):
+    def fix_model(self, W, intMat, drugMat, targetMat,num, cvs, dataset, seed=None):
+        self.dataset = dataset
+        self.num = num
+        self.cvs = cvs
+        self.seed = seed
         # np.savetxt('nrW.txt', W)
         R = W * intMat
         drugMat = (drugMat + drugMat.T) / 2
@@ -44,7 +48,10 @@ class PUDT:
         mlab.stop()
         # score = self.predictR[test_data[:, 0], test_data[:, 1]]
         score = self.predictR
-
+        import pandas as pd
+        score = pd.DataFrame(score)
+        score.to_csv('../data/datasets/EnsambleDTI/pudt_'+str(self.dataset)+'_s'+
+                      str(self.cvs)+'_'+str(self.seed)+'_'+str(self.num)+'.csv', index=False)
         prec, rec, thr = precision_recall_curve(np.array(score['test_label']), np.array(score['score']))
         aupr_val = auc(rec, prec)
         # plt.step(rec, prec, color='b', alpha=0.2,

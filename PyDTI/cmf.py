@@ -18,7 +18,12 @@ class CMF:
         self.lambda_t = lambda_t
         self.max_iter = max_iter
 
-    def fix_model(self, W, intMat, drugMat, targetMat, seed):
+    def fix_model(self, W, intMat, drugMat, targetMat,num, cvs, dataset, seed=None):
+        self.dataset = dataset
+        self.num = num
+        self.cvs = cvs
+        self.seed = seed
+        self.intMat = intMat
         self.num_drugs, self.num_targets = intMat.shape
         self.drugMat, self.targetMat = drugMat, targetMat
         x, y = np.where(W > 0)
@@ -73,7 +78,13 @@ class CMF:
 
     def evaluation(self, test_data, test_label):
         ii, jj = test_data[:, 0], test_data[:, 1]
-        scores = np.sum(self.U[ii, :]*self.V[jj, :], axis=1)
+        for d, t in self.intMat:
+            score = np.sum(self.U[d, :] * self.V[t, :])
+        import pandas as pd
+        score = pd.DataFrame(score)
+        score.to_csv('../data/datasets/EnsambleDTI/cmf_'+str(self.dataset)+'_s'+
+                      str(self.cvs)+'_'+str(self.seed)+'_'+str(self.num)+'.csv', index=False)
+        scores = np.sum(self.U[ii, :] * self.V[jj, :], axis=1)
         prec, rec, thr = precision_recall_curve(test_label, scores)
         aupr_val = auc(rec, prec)
         fpr, tpr, thr = roc_curve(test_label, scores)

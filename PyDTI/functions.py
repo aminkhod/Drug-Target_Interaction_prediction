@@ -122,6 +122,7 @@ def cross_validation(intMat, seeds, cv=0, invert=0, num=10):
                     cv_data[seed].append((W, test_data, test_label))
 
     return cv_data
+'''
 def cross_validation1(intMat, seeds, cv=0, invert=0, num=10):
     cv_data = defaultdict(list)
     for seed in seeds:
@@ -153,18 +154,26 @@ def cross_validation1(intMat, seeds, cv=0, invert=0, num=10):
                 cv_data[seed].append((W, test_data, test_label))
 
     return cv_data
+'''
 
-
-def train(model, cv_data, intMat, drugMat, targetMat):
+def train(model, cv_data, intMat, drugMat, targetMat,cvs, dataset):
     # aupr, auc , prec, rec, thr, name = [], [] ,[], [] , [], []
     aupr, auc = [], []
     for seed in cv_data.keys():
+        num=1
         for W, test_data, test_label in cv_data[seed]:
-            model.fix_model(W, intMat, drugMat, targetMat, seed)
+            # print(str(model)[7:18])
+            # if (num<4) :
+            if str(model)[7:18] == 'EnsambleDTI':
+                model.fix_model(W, intMat, drugMat, targetMat, test_data, test_label, num, cvs, dataset, seed)
+            else:
+                model.fix_model(W, intMat, drugMat, targetMat, seed)
             # prec, rec, thr, name,aupr_val, auc_val = model.evaluation(test_data, test_label)
             aupr_val, auc_val = model.evaluation(test_data, test_label)
             aupr.append(aupr_val)
             auc.append(auc_val)
+            # print("")
+            num +=1
             # plot_aupr(prec , rec ,thr , name)
     return np.array(aupr, dtype=np.float64), np.array(auc, dtype=np.float64)
 def svd_init(M, num_factors):

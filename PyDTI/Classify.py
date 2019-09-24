@@ -17,18 +17,17 @@ def run_classification_configuration(data,labels,test_idx,trees,cw,c,performance
 	total_AUPR_testing = 0
 	labels = np.array(labels)
 	folds_AUPR = []
-	# for fold_data,test_idx_fold in zip(data,test_idx):
-	train_idx = []
-	for idx in range(length):
-		if idx not in test_idx:
-			train_idx.append(idx)
+	for fold_data,test_idx_fold in zip(data,test_idx):
+		train_idx_fold = []
+		for idx in range(length):
+			if idx not in test_idx_fold:
+				train_idx_fold.append(idx)
 
 
 
-	fold_data = np.array(data[0])
-	test_idx_fold = np.array(test_idx)
-	test_idx_fold = test_idx_fold[0]
-	train_idx_fold = np.array(train_idx)
+		fold_data = np.array(fold_data)
+		test_idx_fold = np.array(test_idx_fold)
+		train_idx_fold = np.array(train_idx_fold)
 
 
 	X_train, X_test = fold_data[train_idx_fold,], fold_data[test_idx_fold,]
@@ -87,7 +86,7 @@ def run_classification_configuration(data,labels,test_idx,trees,cw,c,performance
 		return [Avg_AUPR_training,Avg_AUPR,folds_AUPR,c]
 	else:
 		# return All_scores
-		return scores_testing
+		return scores_testing , scores_training
 
 
 

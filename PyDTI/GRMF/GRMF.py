@@ -18,7 +18,11 @@ class GRMF:
     def __init__(self,cv):
         self.cv= cv
 
-    def fix_model(self, W, intMat, drugMat, targetMat, seed=None):
+    def fix_model(self, W, intMat, drugMat, targetMat,num, cvs, dataset, seed=None):
+        self.dataset = dataset
+        self.num = num
+        self.cvs = cvs
+        self.seed = seed
         R = W * intMat
         #R = np.transpose(R)
         drugMat = (drugMat + drugMat.T) / 2
@@ -35,8 +39,12 @@ class GRMF:
         return self.predictR[inx[:, 0], inx[:, 1]]
 
     def evaluation(self, test_data, test_label):
+        score = self.predictR
+        import pandas as pd
+        score = pd.DataFrame(score)
+        score.to_csv('../data/datasets/EnsambleDTI/grmf_'+str(self.dataset)+'_s'+
+                      str(self.cvs)+'_'+str(self.seed)+'_'+str(self.num)+'.csv', index=False)
         score = self.predictR[test_data[:, 0], test_data[:, 1]]
-        average_prec = average_precision_score(test_label, np.array(score))
         prec, rec, thr = precision_recall_curve(test_label, np.array(score))
         aupr_val = auc(rec, prec)
         # plt.step(rec, prec, color='b', alpha=0.2,

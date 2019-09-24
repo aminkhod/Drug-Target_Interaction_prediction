@@ -24,7 +24,11 @@ class NetLapRLS:
         self.beta_d = float(beta_d)
         self.beta_t = float(beta_t)
 
-    def fix_model(self,  W, intMat, drugMat, targetMat, seed=None):
+    def fix_model(self, W, intMat, drugMat, targetMat,num, cvs, dataset, seed=None):
+        self.dataset = dataset
+        self.num = num
+        self.cvs = cvs
+        self.seed = seed
         R = W*intMat
         m, n = R.shape
         drugMat = (drugMat+drugMat.T)/2
@@ -50,6 +54,11 @@ class NetLapRLS:
         return self.predictR[inx[:, 0], inx[:, 1]]
 
     def evaluation(self, test_data, test_label):
+        scores = self.predictR
+        import pandas as pd
+        scores = pd.DataFrame(scores)
+        scores.to_csv('../data/datasets/EnsambleDTI/netlaprls_'+str(self.dataset)+'_s'+
+                      str(self.cvs)+'_'+str(self.seed)+'_'+str(self.num)+'.csv', index=False)
         scores = self.predictR[test_data[:, 0], test_data[:, 1]]
         prec, rec, thr = precision_recall_curve(test_label, scores)
         aupr_val = auc(rec, prec)

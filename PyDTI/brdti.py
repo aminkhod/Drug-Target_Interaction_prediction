@@ -55,10 +55,15 @@ class BRDTI:
         return X   
     
  
-    def fix_model(self, W, intMat, drugMat, targetMat, seed):
+    def fix_model(self, W, intMat, drugMat, targetMat,num, cvs, dataset, seed=None):
+        self.dataset = dataset
+        self.num = num
+        self.cvs = cvs
+        self.seed = seed
         self.learning_rate = self.orig_learning_rate
         self.num_drugs, self.num_targets = intMat.shape
-        dt = W*intMat        
+        dt = W*intMat
+        self.intMat = dt
         data = sp.csr_matrix(dt)
         self.data = data
         x, y = np.where(dt > 0)
@@ -329,7 +334,7 @@ class BRDTI:
         scores = []
 
         if self.D > 0:
-            for d, t in test_data:
+            for d, t in self.intMat:
                 score = self.predict(d,t)
                 if score > 200:
                     scores.append(1)
@@ -340,12 +345,25 @@ class BRDTI:
                     scores.append(sc/(1+sc))
 
 
-        self.scores = scores
+        import pandas as pd
+        scores = pd.DataFrame(scores)
+        scores.to_csv('../data/datasets/EnsambleDTI/brdti_'+str(self.dataset)+'_s'+
+                      str(self.cvs)+'_'+str(self.seed)+'_'+str(self.num)+'.csv', index=False)
         # x, y = test_data[:, 0], test_data[:, 1]
         # test_data_T = np.column_stack((y,x))
         
         #ndcg = normalized_discounted_cummulative_gain(test_data, test_label, np.array(scores))
         #ndcg_inv = normalized_discounted_cummulative_gain(test_data_T, test_label, np.array(scores))
+        if self.D > 0:
+            for d, t in test_data:
+                score = self.predict(d, t)
+                if score > 200:
+                    scores.append(1)
+                elif score < -200:
+                    scores.append(0)
+                else:
+                    sc = np.exp(score)
+                    scores.append(sc / (1 + sc))
         prec, rec, thr = precision_recall_curve(test_label, scores)
         aupr_val = auc(rec, prec)
         fpr, tpr, thr = roc_curve(test_label, scores)

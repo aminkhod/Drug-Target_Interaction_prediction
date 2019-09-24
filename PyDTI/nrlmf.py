@@ -104,7 +104,11 @@ class NRLMF:
             X[i, ii] = S[i, ii]
         return X
 
-    def fix_model(self, W, intMat, drugMat, targetMat, seed=None):
+    def fix_model(self, W, intMat, drugMat, targetMat,num, cvs, dataset, seed=None):
+        self.dataset = dataset
+        self.num = num
+        self.cvs = cvs
+        self.seed = seed
         self.num_drugs, self.num_targets = intMat.shape
         self.ones = np.ones((self.num_drugs, self.num_targets))
         self.intMat = self.cfix*intMat*W
@@ -146,6 +150,33 @@ class NRLMF:
         tinx = np.array(list(self.train_targets))
         TS = self.tsMat[:, tinx]
         scores = []
+        if self.K2 > 0:
+            for d, t in self.intMat:
+                if d in self.train_drugs:
+                    if t in self.train_targets:
+                        val = np.sum(self.U[d, :]*self.V[t, :])
+                    else:
+                        jj = np.argsort(TS[t, :])[::-1][:self.K2]
+                        val = np.sum(self.U[d, :]*np.dot(TS[t, jj], self.V[tinx[jj], :]))/np.sum(TS[t, jj])
+                else:
+                    if t in self.train_targets:
+                        ii = np.argsort(DS[d, :])[::-1][:self.K2]
+                        val = np.sum(np.dot(DS[d, ii], self.U[dinx[ii], :])*self.V[t, :])/np.sum(DS[d, ii])
+                    else:
+                        ii = np.argsort(DS[d, :])[::-1][:self.K2]
+                        jj = np.argsort(TS[t, :])[::-1][:self.K2]
+                        v1 = DS[d, ii].dot(self.U[dinx[ii], :])/np.sum(DS[d, ii])
+                        v2 = TS[t, jj].dot(self.V[tinx[jj], :])/np.sum(TS[t, jj])
+                        val = np.sum(v1*v2)
+                scores.append(np.exp(val)/(1+np.exp(val)))
+        elif self.K2 == 0:
+            for d, t in self.intMat:
+                val = np.sum(self.U[d, :]*self.V[t, :])
+                scores.append(np.exp(val)/(1+np.exp(val)))
+        import pandas as pd
+        scores = pd.DataFrame(scores)
+        scores.to_csv('../data/datasets/EnsambleDTI/nrlmf_'+str(self.dataset)+'_s'+
+                      str(self.cvs)+'_'+str(self.seed)+'_'+str(self.num)+'.csv', index=False)
         if self.K2 > 0:
             for d, t in test_data:
                 if d in self.train_drugs:

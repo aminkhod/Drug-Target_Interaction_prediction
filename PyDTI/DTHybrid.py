@@ -8,7 +8,11 @@ class DTHYBRID:
     def __init__(self,dataset):
         self.dataset=dataset
 
-    def fix_model(self, W, intMat, drugMat, targetMat, seed):
+    def fix_model(self, W, intMat, drugMat, targetMat,num, cvs, dataset, seed=None):
+        self.dataset = dataset
+        self.num = num
+        self.cvs = cvs
+        self.seed = seed
         np.savetxt('DTHybridW.txt', W)
         command = 'Rscript'
         path2script = 'DTHybrid.R'
@@ -27,6 +31,11 @@ class DTHYBRID:
             inf.readline()
             int_array = [line.strip("\n").split()[:] for line in inf]
         score=np.array(int_array, dtype=np.float64)
+
+        import pandas as pd
+        scores = pd.DataFrame(score)
+        scores.to_csv('../data/datasets/EnsambleDTI/dthybrid_'+str(self.dataset)+'_s'+
+                      str(self.cvs)+'_'+str(self.seed)+'_'+str(self.num)+'.csv', index=False)
         scores=score[test_data[:, 0],test_data[:, 1]]
         prec, rec, thr = precision_recall_curve(test_label, np.array(scores))
         aupr_val = auc(rec, prec)

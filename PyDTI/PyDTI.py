@@ -21,6 +21,7 @@ from vbmklmf import VBMKLMF
 from wnngip import WNNGIP
 from pudt.pudt import PUDT
 from GRMF.GRMF import GRMF
+from EnsambleDTI import EnsambleDTI
 # from ndaf.NDAF import NDAF
 def main(argv):
     try:
@@ -31,7 +32,6 @@ def main(argv):
     data_dir = os.path.join(os.path.pardir, 'data')
     output_dir = os.path.join(os.path.pardir, 'output')
     cvs, sp_arg, model_settings, predict_num = 1, 1, [], 0
-
     seeds = [7771, 8367, 22, 1812, 4659]
     seedsOptPar = [156]
 
@@ -57,8 +57,8 @@ def main(argv):
     if not os.path.isdir(output_dir):
         os.makedirs(output_dir)
     # default parameters for each methods
-    method = 'ddr'
-    sp_arg=0
+    method = 'ensambledti'
+    # sp_arg=0
     if method == 'nrlmf':
         args = {'c': 5, 'K1': 5, 'K2': 5, 'r': 50, 'lambda_d': 0.125, 'lambda_t': 0.125,
                 'alpha': 0.25, 'beta': 0.125, 'theta': 0.5, 'max_iter': 100}
@@ -103,6 +103,8 @@ def main(argv):
         args = {'T': 0.8, 'sigma': 1.0, 'alpha': 0.8}
     if method == 'kbmf':
         args = {'R': 50}
+    if method == 'ensambledti':
+        args == {''}
     if method == 'cmf':
         args = {'K': 50, 'lambda_l': 0.5, 'lambda_d': 0.125, 'lambda_t': 0.125, 'max_iter': 30}
 
@@ -160,7 +162,7 @@ def main(argv):
     # thread1.start()
     # thread2.start()
     # thread3.start()
-    # thread4.start()
+    thread4.start()
 
 
     # Add threads to thread list
@@ -192,7 +194,7 @@ def thear(method, dataset, data_dir, output_dir, cvs, sp_arg, model_settings, pr
             X, D, T, cv, invert = intMat.T, targetMat, drugMat, 0, 1
         if cvs == 4:
             X, D, T, cv = intMat,  drugMat, targetMat, 2
-        cv_data = cross_validation(X, seeds, cv, invert)
+        cv_data = cross_validation(X, seeds, cv, invert, num = 10)
 
     if invert:
         X, D, T = intMat, drugMat, targetMat
@@ -201,6 +203,8 @@ def thear(method, dataset, data_dir, output_dir, cvs, sp_arg, model_settings, pr
 
     if sp_arg == 0 and predict_num == 0:
         if (method=="vbmklmf"):
+            cv_eval.vbmklmf_cv_eval(method, dataset, cv_data, X, D, T, cvs, args)
+        if (method == "ensambledti"):
             cv_eval.vbmklmf_cv_eval(method, dataset, cv_data, X, D, T, cvs, args)
         if method == 'netcbp':
             cv_eval.netcbp_cv_eval(method, dataset, cv_data, X, D, T, cvs, args)
@@ -276,10 +280,12 @@ def thear(method, dataset, data_dir, output_dir, cvs, sp_arg, model_settings, pr
            model = KBMF(num_factors=args['R'])
         if method == 'cmf':
             model = CMF(K=args['K'], lambda_l=args['lambda_l'], lambda_d=args['lambda_d'], lambda_t=args['lambda_t'], max_iter=args['max_iter'])
+        if (method == 'ensambledti'):
+            model = EnsambleDTI(args= args,dataset=dataset)
         cmd = str(model)
         if predict_num == 0:
             print("Dataset:"+dataset+" CVS:"+str(cvs)+"\n"+cmd)
-            aupr_vec, auc_vec = train(model, cv_data, X, D, T)
+            aupr_vec, auc_vec = train(model, cv_data, X, D, T,cvs,dataset)
             aupr_avg, aupr_conf = mean_confidence_interval(aupr_vec)
             auc_avg, auc_conf = mean_confidence_interval(auc_vec)
             print("auc:%.6f, aupr: %.6f, auc_conf:%.6f, aupr_conf:%.6f, Time:%.6f" % (auc_avg, aupr_avg, auc_conf, aupr_conf, time.clock()-tic))
