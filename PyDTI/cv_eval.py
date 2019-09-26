@@ -2,7 +2,7 @@ import time
 
 from DTHybrid import DTHYBRID
 from netcbp.netcbp import NetCBP
-from pudt.pudt import PUDT
+# from pudt.pudt import PUDT
 from blm import BLMNII
 from brdti import BRDTI
 from cmf import CMF
@@ -18,36 +18,38 @@ from nrlmf import NRLMF
 from wnngip import WNNGIP
 from GRMF import GRMF
 # from ndaf.NDAF import NDAF
-def vbmklmf_cv_eval(method, dataset, cv_data, X, D, T, cvs, para):
-    max_auc, auc_opt = 0, []
-    tic = time.clock()
-    model = VBMKLMF(dataset,cvs)
-    cmd = "Dataset:"+dataset+" CVS: "+str(cvs)+"\n"+str(model)
-    print(cmd)
-    aupr_vec, auc_vec = train(model, cv_data, X, D, T)
-    aupr_avg, aupr_conf = mean_confidence_interval(aupr_vec)
-    auc_avg, auc_conf = mean_confidence_interval(auc_vec)
-    print("auc:%.6f, aupr: %.6f, auc_conf:%.6f, aupr_conf:%.6f, Time:%.6f\n" % (auc_avg, aupr_avg, auc_conf, aupr_conf, time.clock()-tic))
-    if auc_avg > max_auc:
-        max_auc = auc_avg
-        auc_opt = [cmd, auc_avg, aupr_avg, auc_conf, aupr_conf]
-    cmd = "Optimal parameter setting:\n%s\n" % auc_opt[0]
-    cmd += "auc: %.6f, aupr: %.6f, auc_conf:%.6f, aupr_conf:%.6f\n" % (auc_opt[1], auc_opt[2], auc_opt[3], auc_opt[4])
-    cmd +=" max auc:%.6f\n"%(max_auc)
-    print(cmd)
+# def vbmklmf_cv_eval(method, dataset, cv_data, X, D, T, cvs, para):
+#     max_auc, auc_opt = 0, []
+#     tic = time.clock()
+#     model = VBMKLMF(dataset,cvs)
+#     cmd = "Dataset:"+dataset+" CVS: "+str(cvs)+"\n"+str(model)
+#     print(cmd)
+#     aupr_vec, auc_vec = train(model, cv_data, X, D, T)
+#     aupr_avg, aupr_conf = mean_confidence_interval(aupr_vec)
+#     auc_avg, auc_conf = mean_confidence_interval(auc_vec)
+#     print("auc:%.6f, aupr: %.6f, auc_conf:%.6f, aupr_conf:%.6f, Time:%.6f\n" % (auc_avg, aupr_avg, auc_conf, aupr_conf, time.clock()-tic))
+#     if auc_avg > max_auc:
+#         max_auc = auc_avg
+#         auc_opt = [cmd, auc_avg, aupr_avg, auc_conf, aupr_conf]
+#     cmd = "Optimal parameter setting:\n%s\n" % auc_opt[0]
+#     cmd += "auc: %.6f, aupr: %.6f, auc_conf:%.6f, aupr_conf:%.6f\n" % (auc_opt[1], auc_opt[2], auc_opt[3], auc_opt[4])
+#     cmd +=" max auc:%.6f\n"%(max_auc)
+#     print(cmd)
 def dthybrid_cv_eval(method, dataset, cv_data, X, D, T, cvs, para):
     max_auc, auc_opt = 0, []
-    tic = time.clock()
-    model = DTHYBRID(dataset)
-    cmd = "Dataset:"+dataset+" CVS: "+str(cvs)+"\n"+str(model)
-    print(cmd)
-    aupr_vec, auc_vec = train(model, cv_data, X, D, T)
-    aupr_avg, aupr_conf = mean_confidence_interval(aupr_vec)
-    auc_avg, auc_conf = mean_confidence_interval(auc_vec)
-    print("auc:%.6f, aupr: %.6f, auc_conf:%.6f, aupr_conf:%.6f, Time:%.6f\n" % (auc_avg, aupr_avg, auc_conf, aupr_conf, time.clock()-tic))
-    if auc_avg > max_auc:
-        max_auc = auc_avg
-        auc_opt = [cmd, auc_avg, aupr_avg, auc_conf, aupr_conf]
+    for l in np.arange(0, 1.1, 0.1):
+	    for a in np.arange(0, 1.1, 0.1):
+		    tic = time.clock()
+		    model = DTHYBRID(dataset,l,a)
+		    cmd = "Dataset:"+dataset+" CVS: "+str(cvs)+"\n"+str(model)
+		    print(cmd)
+		    aupr_vec, auc_vec = train(model, cv_data, X, D, T)
+		    aupr_avg, aupr_conf = mean_confidence_interval(aupr_vec)
+		    auc_avg, auc_conf = mean_confidence_interval(auc_vec)
+		    print("auc:%.6f, aupr: %.6f, auc_conf:%.6f, aupr_conf:%.6f, Time:%.6f\n" % (auc_avg, aupr_avg, auc_conf, aupr_conf, time.clock()-tic))
+		    if auc_avg > max_auc:
+		        max_auc = auc_avg
+		        auc_opt = [cmd, auc_avg, aupr_avg, auc_conf, aupr_conf]
     cmd = "Optimal parameter setting:\n%s\n" % auc_opt[0]
     cmd += "auc: %.6f, aupr: %.6f, auc_conf:%.6f, aupr_conf:%.6f\n" % (auc_opt[1], auc_opt[2], auc_opt[3], auc_opt[4])
     cmd +=" max auc:%.6f\n"%(max_auc)
@@ -219,22 +221,22 @@ def grmf_cv_eval(method, dataset, cv_data, X, D, T, cvs, para):
    cmd += "auc: %.6f, aupr: %.6f, auc_conf:%.6f, aupr_conf:%.6f\n" % (auc_opt[1], auc_opt[2], auc_opt[3], auc_opt[4])
    print(cmd)
 
-def pudt_cv_eval(method, dataset, cv_data, X, D, T, cvs, para):
-   max_auc, auc_opt = 0, []
-   tic = time.clock()
-   model = PUDT(dataset)
-   cmd = "Dataset:"+dataset+" CVS: "+str(cvs)+"\n"+str(model)
-   print(cmd)
-   aupr_vec, auc_vec = train(model, cv_data, X, D, T)
-   aupr_avg, aupr_conf = mean_confidence_interval(aupr_vec)
-   auc_avg, auc_conf = mean_confidence_interval(auc_vec)
-   print("auc:%.6f, aupr: %.6f, auc_conf:%.6f, aupr_conf:%.6f, Time:%.6f\n" % (auc_avg, aupr_avg, auc_conf, aupr_conf, time.clock()-tic))
-   if auc_avg > max_auc:
-       max_auc = auc_avg
-       auc_opt = [cmd, auc_avg, aupr_avg, auc_conf, aupr_conf]
-   cmd = "Optimal parameter setting:\n%s\n" % auc_opt[0]
-   cmd += "auc: %.6f, aupr: %.6f, auc_conf:%.6f, aupr_conf:%.6f\n" % (auc_opt[1], auc_opt[2], auc_opt[3], auc_opt[4])
-   print(cmd)
+# def pudt_cv_eval(method, dataset, cv_data, X, D, T, cvs, para):
+#    max_auc, auc_opt = 0, []
+#    tic = time.clock()
+#    model = PUDT(dataset)
+#    cmd = "Dataset:"+dataset+" CVS: "+str(cvs)+"\n"+str(model)
+#    print(cmd)
+#    aupr_vec, auc_vec = train(model, cv_data, X, D, T)
+#    aupr_avg, aupr_conf = mean_confidence_interval(aupr_vec)
+#    auc_avg, auc_conf = mean_confidence_interval(auc_vec)
+#    print("auc:%.6f, aupr: %.6f, auc_conf:%.6f, aupr_conf:%.6f, Time:%.6f\n" % (auc_avg, aupr_avg, auc_conf, aupr_conf, time.clock()-tic))
+#    if auc_avg > max_auc:
+#        max_auc = auc_avg
+#        auc_opt = [cmd, auc_avg, aupr_avg, auc_conf, aupr_conf]
+#    cmd = "Optimal parameter setting:\n%s\n" % auc_opt[0]
+#    cmd += "auc: %.6f, aupr: %.6f, auc_conf:%.6f, aupr_conf:%.6f\n" % (auc_opt[1], auc_opt[2], auc_opt[3], auc_opt[4])
+#    print(cmd)
 
 def netcbp_cv_eval(method, dataset, cv_data, X, D, T, cvs, para):
    max_auc, auc_opt = 0, []

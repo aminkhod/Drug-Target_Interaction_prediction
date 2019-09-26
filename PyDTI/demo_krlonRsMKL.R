@@ -4,73 +4,90 @@
 #rm(list = ls())
 
 ## current data set name
-dataset <- commandArgs(trailingOnly = TRUE)
-nums = as.character(dataset)
+
+#options(echo=TRUE)
+args <- commandArgs(trailingOnly = TRUE)
+print(args)
+
+lambda <- as.numeric(args[2])
+alpha <- as.numeric(args[3])
+print(lambda)
+print(alpha)
+
 w=read.table("KronRIsMKLW.txt")
-db <- dataset
-#db <- "nr"
-setwd('../data/datasets')
-switch (db,
-        e = {
-          cat("en data\n")
-          flush.console()
-          sd <- read.table("e_simmat_dc.txt")
-          sd <- as.matrix(sd)
-          st <- read.table("e_simmat_dg.txt")
-          st <- as.matrix(st)
-          Y <- read.table("e_admat_dgc.txt")
-          Y <- as.matrix(Y) 
-          Y <- t(Y)         
-        },
-        ic = {
-          cat("ic data\n")
-          flush.console()
-          sd <- read.table("ic_simmat_dc.txt")
-          sd <- as.matrix(sd)
-          st <- read.table("ic_simmat_dg.txt")
-          st <- as.matrix(st)
-          Y <- read.table("ic_admat_dgc.txt")
-          Y <- as.matrix(Y)
-          Y <- t(Y)
-        },
-        gpcr = {
-          cat("gpcr data\n")
-          flush.console()
-          sd <- read.table("gpcr_simmat_dc.txt")
-          sd <- as.matrix(sd)
-          st <- read.table("gpcr_simmat_dg.txt")
-          st <- as.matrix(st)
-          Y <- read.table("gpcr_admat_dgc.txt")
-          Y <- as.matrix(Y)
-          Y <- t(Y)
-        },
-        nr = {
-          cat("nr data\n")
-          flush.console()
-          sd <- read.table("nr_simmat_dc.txt")
-          sd <- as.matrix(sd)
-          st <- read.table("nr_simmat_dg.txt")
-          st <- as.matrix(st)
-          Y <- read.table("nr_admat_dgc.txt")
-          Y <- as.matrix(Y)
-          Y <- t(Y)
-        },
-        srep = {
-          cat("Scientific Reports data\n")
-          flush.console()
-          sd <- read.table("drug ChemSimilarity.txt", sep = ",")
-          sd <- data.matrix(sd)
-          st <- read.table("target SeqSimilarity.txt", sep = ",")
-          st <- data.matrix(st)
-          Y <- read.table("adjacent Matrix.txt", sep = ",")
-          Y <- data.matrix(Y)
-        },
-        stop("db should be one of the follows: 
-             {e, ic, gpcr, nr or srep}\n")
-        )
-setwd('../')
-setwd('../')
-setwd('PyDTI/')
+Y= read.table('KronRIsMKLintMat.txt')
+sd = read.table('KronRIsMKLdrugMat.txt')
+st = read.table('KronRIsMKLtargetMat.txt')
+
+w <- as.matrix(w)
+sd <- as.matrix(sd)
+st <- as.matrix(st)
+Y <- as.matrix(Y)
+#w=t(w)
+Y= w*Y
+
+#setwd('../data/datasets')
+#switch (db,
+#        e = {
+#          cat("en data\n")
+#          flush.console()
+#          sd <- read.table("e_simmat_dc.txt")
+#          sd <- as.matrix(sd)
+#          st <- read.table("e_simmat_dg.txt")
+#          st <- as.matrix(st)
+#          Y <- read.table("e_admat_dgc.txt")
+#          Y <- as.matrix(Y) 
+#          Y <- t(Y)         
+#        },
+#        ic = {
+#          cat("ic data\n")
+#          flush.console()
+#          sd <- read.table("ic_simmat_dc.txt")
+#          sd <- as.matrix(sd)
+#          st <- read.table("ic_simmat_dg.txt")
+#          st <- as.matrix(st)
+#          Y <- read.table("ic_admat_dgc.txt")
+#          Y <- as.matrix(Y)
+#          Y <- t(Y)
+#        },
+#        gpcr = {
+#          cat("gpcr data\n")
+#          flush.console()
+#          sd <- read.table("gpcr_simmat_dc.txt")
+#          sd <- as.matrix(sd)
+#          st <- read.table("gpcr_simmat_dg.txt")
+#          st <- as.matrix(st)
+#          Y <- read.table("gpcr_admat_dgc.txt")
+#          Y <- as.matrix(Y)
+#          Y <- t(Y)
+#        },
+#        nr = {
+#          cat("nr data\n")
+#          flush.console()
+#          sd <- read.table("nr_simmat_dc.txt")
+#          sd <- as.matrix(sd)
+#          st <- read.table("nr_simmat_dg.txt")
+#          st <- as.matrix(st)
+#          Y <- read.table("nr_admat_dgc.txt")
+#          Y <- as.matrix(Y)
+#          Y <- t(Y)
+#        },
+#        srep = {
+#          cat("Scientific Reports data\n")
+#          flush.console()
+#          sd <- read.table("drug ChemSimilarity.txt", sep = ",")
+#          sd <- data.matrix(sd)
+#          st <- read.table("target SeqSimilarity.txt", sep = ",")
+#          st <- data.matrix(st)
+#          Y <- read.table("adjacent Matrix.txt", sep = ",")
+#          Y <- data.matrix(Y)
+#        },
+#        stop("db should be one of the follows: 
+#             {e, ic, gpcr, nr or srep}\n")
+#        )
+#setwd('../')
+#setwd('../')
+#setwd('PyDTI/')
 
 #It use new dataset that its name is "KD"
 if (db == "kd") {
@@ -197,8 +214,8 @@ finalAB <- vector("list", length = 1)
 ### training set with the test set links removed
 
 #    Yfold <- savedFolds[[i]][[j]][[1]]
-w=t(w)
-Yfold <-w*Y
+
+Yfold <-Y
 KgipD <- fastKgipMat(Yfold, 1)
 KgipT <- fastKgipMat(t(Yfold), 1)
 
